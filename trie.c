@@ -90,6 +90,10 @@ bool insertStringToTrie(Trie_t * tree, TrieValue_t * string) {
     return true;
 }
 
+/* Returns true if the null-terminated string of type TrieValue_t is contained
+in the Trie_t referenced by tree. Returns false otherwise.
+This is the bread-and-butter of it's application in spell checking/dictionary
+lookup. */
 bool stringExistsInTrie(Trie_t * tree, TrieValue_t * string) {
     Trie_t * currentNode = tree;
     for (size_t i = 0; string[i] != '\0'; i++) {
